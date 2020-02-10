@@ -3,9 +3,10 @@ import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
 import TestComponent from './TestComponent'
 import Tabs from './components/shared/Tabs';
-
+import ReactLoader from './components/shared/loader'
 
 function App() {
+document.title = 'ATS';
 const [TabList,setTabList] = useState([]);
 useEffect (()=>{
   let tab_list = [];
@@ -40,6 +41,7 @@ return (
             error="Please enter valid email"
           />
         </div>
+        <ReactLoader loading="false"/>
       </div>
       <div className="row">
       <Tabs tabList={TabList} />
