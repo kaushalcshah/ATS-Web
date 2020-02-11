@@ -6,11 +6,6 @@ import Dropdown from './components/shared/Dropdown';
 
 function App() {
     document.title = 'ATS';
-    const array = [
-      { value: 'chocolate', label: 'Chocolate' },
-      { value: 'strawberry', label: 'Strawberry' },
-      { value: 'vanilla', label: 'Vanilla' }
-    ]
   return (
     <>
       <div className="row">
@@ -38,9 +33,6 @@ function App() {
           />
         </div>
         <ReactLoader loading="false"/>
-      </div>
-      <div>
-        <Dropdown id="state" Class="d1" onChange={(e) => console.log(e.value)} arr={array} />
       </div>
     </>
   );
