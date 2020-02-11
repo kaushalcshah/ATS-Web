@@ -1,7 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
-import Tabs from './components/shared/Tabs';
 
 
 function App(props) {
