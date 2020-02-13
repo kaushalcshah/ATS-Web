@@ -2,12 +2,15 @@ import React from 'react';
 import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
 import ReactLoader from './components/shared/loader';
-import FileSelector from './components/shared/FileSelector'
+import FileSelector from './components/shared/FileSelector';
+import NavBar from './components/shared/NavBar'
 function App() {
     document.title = 'ATS';
   return (
     <>
+    <NavBar/>
       <div className="row">
+	  
         <div className="col-lg-6">
           <TextInput
             id="first-name"

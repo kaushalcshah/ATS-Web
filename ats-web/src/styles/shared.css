@@ -3,3 +3,45 @@ label.required:after {
     content:" * ";
     color:red;
 }
+
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 4px;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 30px;
+    margin-top: 74px;
+
+  }
+  
+  .trigger:hover {
+    color: #1890ff;
+  }
+  .img{
+    width: 200px;
+    height: 75px;
+    margin-left: 0px;
+    transition: all 0.2s;
+  }
+  .img1{
+      width:80px;
+      height : 75px;
+      transition: all 0.2s;
+  }
+  .sidebar {
+      height: 100vh;
+  }
+  .margin-20{
+      margin: 20px 20px;
+  }
+  .ant-menu-item a {
+    text-decoration: none;
+  }
+  .ant-menu-item {
+      padding-left: 12px!important;
+  }
+  .spacer{
+      width: 200px;
+      height: 100px;
+  }
