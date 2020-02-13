@@ -3,7 +3,8 @@ import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
 import ReactLoader from './components/shared/loader'
 import Dropdown from './components/shared/Dropdown';
-
+import ReactLoader from './components/shared/loader';
+import FileSelector from './components/shared/FileSelector'
 function App() {
     document.title = 'ATS';
   return (
@@ -33,6 +34,18 @@ function App() {
           />
         </div>
         <ReactLoader loading="false"/>
+        <div className="col-lg-6">
+          <FileSelector
+            id="file-selector"
+            label="Select : "
+            labelclassName=""
+            name="fileSelector"
+            value=""
+            onChange={(e) => console.log("On Change --->", e.target.files[0])}
+            isRequired="true"
+            error="Please select a valid file"
+          />
+        </div>
       </div>
     </>
   );
