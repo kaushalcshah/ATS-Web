@@ -51,22 +51,22 @@ function App() {
         <div className="col-lg-6">
           <InputSpinner
             name="inputSpinner"
-            min="-1"
-            max="15"
+            min="0"
+            max="20"
             isRequired="true"
             label="Left Input Spinner"
-            error="Please select experience"
+            errorMsg="Please select valid experience years"
             onChange={(e) => console.log("On Change --->", e)}
           />
         </div>
         <div className="col-lg-6">
           <InputSpinner
             name="input1Spinner"
-            min="-1"
+            min="0"
             max="15"
             isRequired="true"
             label="Right Input Spinner"
-            error="Please select experience"
+            errorMsg="Please select valid experience years"
             onChange={(e) => console.log("On Change --->", e)}
           />
         </div>
