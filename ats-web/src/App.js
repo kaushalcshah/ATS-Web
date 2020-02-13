@@ -2,11 +2,17 @@ import React from 'react';
 import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
 import ReactLoader from './components/shared/loader';
-import FileSelector from './components/shared/FileSelector'
+import FileSelector from './components/shared/FileSelector';
+import { Button } from 'react-bootstrap';
+
 function App() {
     document.title = 'ATS';
   return (
     <>
+    <>
+      <Button variant="secondary">Secondary</Button>{' '}
+      <Button variant="success">Success</Button>{' '}
+    </>
       <div className="row">
         <div className="col-lg-6">
           <TextInput
