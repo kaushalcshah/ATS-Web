@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import DefaultPropTypes from '../common/defaultPropTypes';
 import DefaultProps from '../common/defaultProps';
 

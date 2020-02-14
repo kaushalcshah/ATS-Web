@@ -61,7 +61,7 @@ FileSelector.defaultProps = new DefaultProps();
 //Customize default props values
 FileSelector.defaultProps.controlClass = "col-sm-8 custom-file";
 FileSelector.defaultProps.fieldClass = "custom-file-input";
-FileSelector.defaultProps.fileNameLabel = "Choose File ...",
+FileSelector.defaultProps.fileNameLabel = "Choose File ...";
 FileSelector.defaultProps.fileNameLabelClass = "custom-file-label text-left";
 FileSelector.defaultProps.acceptFilesOfType = ".doc,.docx,.pdf,.txt,.rtf";
 
