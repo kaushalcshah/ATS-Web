@@ -4,6 +4,7 @@ label.required:after {
     color:red;
 }
 
+/* Append to NavBar */
 .trigger {
     font-size: 18px;
     line-height: 64px;
@@ -45,3 +46,37 @@ label.required:after {
       width: 200px;
       height: 100px;
   }
+
+  .siderWidth{
+    width : 200px;
+    transition: all 0.2s
+
+  }
+
+  .collapsableWidth{
+    width : 80px;
+    transition: all 0.2s
+  }
+
+
+  .sider{
+    height: 100vh!important;
+    position: fixed!important;
+    left: 0!important;
+  }
+
+
+  .content{
+    margin: 20px;
+  }
+
+  .layout{
+    margin-left: 15px;
+  }
+.active{
+  color: yellow!important;
+  
+}
+ 
+
+  /*   */
