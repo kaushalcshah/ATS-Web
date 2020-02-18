@@ -1,50 +1,47 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
 
 
 function App(props) {
-return (
-    <>{
-      props.tabDetails === "CandidateDetails" ? 
-      <div className="row">
-        <div className="col-lg-4">
-          <TextInput
-            id="first-name"
-            label="First Name"
-            labelclassName=""
-            name="firstName"
-            value=""
-            onChange={(e) => console.log(e.target.value)}
-            isRequired="true"
-          />
-        </div>
-        <div className="col-lg-4">
-          <TextInput
-            id="email"
-            label="Email"
-            labelclassName=""
-            name="email"
-            value=""
-            onChange={(e) => console.log(e.target.value)}
-            isRequired="true"
-            error="Please enter valid email"
-          />
-        </div>
-      </div>
-      : <div className="row">
-      <div className="col-lg-4">
-      <TextInput
-            id="feedback"
-            label="Feedback"
-            labelclassName=""
-            name="feedback"
-            value=""
-            onChange={(e) => console.log(e.target.value)}
-          />
-      </div>
+  let numberOfRows = [];
+  for(let i=0;i<props.numberOfRows;i++){
+    numberOfRows.push(i);
+  } 
+  
 
-      </div>}
+return (
+    <>
+     {numberOfRows.map((index) =>
+     <div className="ant-row">
+     <div className="ant-col-12">
+        <TextInput
+        id={index}
+        label={props.tabDetails +"_" + index}
+        labelclassName=""
+        name={index}
+        value=""
+        onChange={(e) => console.log(e.target.value)}
+        isRequired={true}
+        labelWrapperClass="ant-col ant-form-item-label ant-col-xs-12 ant-col-sm-6"
+        fieldContainerClass="ant-col ant-form-item-control-wrapper ant-col-xs-12 ant-col-sm-14"
+      />
+      </div>
+      <div className="ant-col-12">
+       <TextInput
+        id={index}
+        label={props.tabDetails + index}
+        labelclassName=""
+        name={index}
+        value=""
+        onChange={(e) => console.log(e.target.value)}
+        isRequired={true}
+        labelWrapperClass="ant-col ant-form-item-label ant-col-xs-12 ant-col-sm-6"
+        fieldContainerClass="ant-col ant-form-item-control-wrapper ant-col-xs-12 ant-col-sm-14"
+      />
+      </div>
+      </div>
+    )}
     </>
   );
 }

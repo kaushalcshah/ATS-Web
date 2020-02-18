@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
 import TestComponent from './TestComponent'
-import Tabs from './components/shared/Tabs';
+import HorizontalTabs from './components/shared/HorizontalTabs';
 import ReactLoader from './components/shared/loader';
 import FileSelector from './components/shared/FileSelector';
 import InputSpinner from './components/shared/InputSpinner';
@@ -13,8 +13,8 @@ const [TabList,setTabList] = useState([]);
 
 useEffect (()=>{
   let tab_list = [];
-  tab_list.push({"title":"Candidate Details","URL":<TestComponent tabDetails="CandidateDetails"/>,"isActive":true});
-  tab_list.push({"title":"Feedback","URL":<TestComponent tabDetails="Feedback"/>,"isActive":false});
+  tab_list.push({"title":"Candidate Details","URL":<TestComponent tabDetails="CandidateDetails" numberOfRows={2}/>});
+  tab_list.push({"title":"Feedback","URL":<TestComponent tabDetails="Feedback" numberOfRows={5}/>});
   setTabList(tab_list)
 },[]);
 
@@ -93,8 +93,8 @@ return (
           />
         </div>
       </div>
-      <div className="row">
-      <Tabs tabList={TabList} />
+      <div className="tab-container">
+        <HorizontalTabs tabList={TabList} />
       </div>
     </>
   );
