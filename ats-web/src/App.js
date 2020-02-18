@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import './styles/shared.css';
 import TextInput from './components/shared/TextInput';
 import TestComponent from './TestComponent'
 import HorizontalTabs from './components/shared/HorizontalTabs';
