@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { Select } from 'antd';
-import 'antd/dist/antd.css';
-import '../../styles/shared.css';
 
 class DropdownElement extends Component {
 
@@ -19,23 +17,25 @@ class DropdownElement extends Component {
         </div>
         <div className={this.props.divSelectClass}>
           <Select
-            showSearch
+            showSearch searchBy="label"
             id={this.props.id}
             name={this.props.name}
             onChange={this.props.onChange}
             className="selectWidth"
             placeholder={this.props.placeHolder}
-
+            filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
           >
-            {this.props.array.map((value, index) => {
-              return (<Option value={value} >
-                {value}
+            {this.props.array.map((item,index) => {
+              return (<Option key={index} value={item.Val} >
+                {item.Label}
               </Option>);
             })}
 
           </Select>
           {this.props.error && (
-            <span className="help-block">{this.props.error}</span>)}
+            <div className="ant-form-explain">
+            {this.props.error}
+          </div> )}
         </div>
       </div>
     );
@@ -61,13 +61,13 @@ DropdownElement.propTypes = {
 
 DropdownElement.defaultProps = {
   error: "",
-  containerClass: "col-sm-6",
-  containerErrorClass: "col-sm-6 has-error",
-  labelClass: "control-label",
-  requiredLabelClass: "control-label required",
-  Class: "form-control",
-  divLabelClass: "col-sm-2",
-  divSelectClass: "col-sm-4"
+  containerClass: "ant-col-12",
+  containerErrorClass: "ant-col-12 has-error",
+  labelClass: "ant-form-item-label",
+  requiredLabelClass: "ant-form-item-required",
+  Class: "ant-form-item-children",
+  divLabelClass: "ant-col-4",
+  divSelectClass: "ant-col-8"
 };
 
 export default DropdownElement;
