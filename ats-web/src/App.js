@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/shared.css';
+
 import TextInput from './components/shared/TextInput';
 import ReactLoader from './components/shared/loader';
 import FileSelector from './components/shared/FileSelector';
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <NavBar/>
-      <div className="row">
+      {/* <div className="row">
 	  
         <div className="col-lg-6">
           <TextInput
@@ -47,7 +47,7 @@ function App() {
             error="Please select a valid file"
           />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

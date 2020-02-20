@@ -12,7 +12,7 @@ const { Header, Sider, Content } = Layout;
 class NavBar extends React.Component {
   
     state = {
-        collapsed:"false"
+        collapsed:true
     };
 
     toggle = () => {
@@ -64,7 +64,7 @@ class NavBar extends React.Component {
                                 </Menu>
                             </Sider>
                         </div>
-                        <div className="col-md-10">
+                        <div className="">
                             <Layout className="layout">
                                 <Content className="content" >
                                     <Switch>
