@@ -27,3 +27,12 @@ label.ant-form-item-required::after{
     padding: 25px;
     margin: 25px;
 }
+
+.marginbutton {
+    align-items: center;
+  margin: 0 28px 28px 50px;
+}
+
+.selectWidth {
+  width: 200px;
+}
