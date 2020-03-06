@@ -10,7 +10,6 @@ export function getCandidates() {
 export async function getCandidate(id) {
   try {
     let handleRes = await fetch(baseUrl + "/" + id);
-    console.log(handleRes);
     return handleResponse(handleRes);
   }
   catch (handleErr) {
