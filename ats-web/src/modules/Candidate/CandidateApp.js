@@ -3,10 +3,6 @@ import AddCandidate from '../Candidate/AddCandidate';
 import Details from '../Candidate/Details';
 import * as CandidateApi from '../../api/candidateApi';
 import DataTable from '../../components/shared/dataTable'
-import CandidateInfo from './CandidateInfo';
-import AssociatedPosition from './AssociatedPosition';
-import { Button } from 'antd';
-
 
 function CandidateApp() {
   const [showAddCandidate, setShowAddCandidate] = useState(false);
