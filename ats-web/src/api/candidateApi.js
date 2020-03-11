@@ -32,7 +32,7 @@ export function saveCandidate(candidate) {
 }
 
 export function deleteCandidate(candidateId) {
-  return fetch(baseUrl + candidateId, { method: "DELETE" })
+  return fetch(baseUrl + '/'+ candidateId, { method: "DELETE" })
     .then(handleResponse)
     .catch(handleError);
 }
