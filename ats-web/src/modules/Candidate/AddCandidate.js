@@ -49,7 +49,6 @@ function AddCandidate(props) {
   const [referrerList, setReferrerList] = useState([]);
   const [candidateResume, setCandidateResume] = useState(null);
 
-
   useEffect(() => {
     if(props.selectedCandidateDetails){
        const candidate_details = props.selectedCandidateDetails;
@@ -102,6 +101,7 @@ function AddCandidate(props) {
     _candidateDetailErrors = CandidateDetails.validate(_candidateDetailErrors, e.target.name, e.target.value.trim());
     setCandidateDetailErrors(_candidateDetailErrors);
   }
+
   const handleOnFileChange = e => {
     setCandidateResume(e.target.files[0]);
   }
