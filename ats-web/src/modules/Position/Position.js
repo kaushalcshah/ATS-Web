@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from '../../components/shared/TextInput';
 import { Modal } from 'antd';
+import * as positionApi from '../../api/positionApi';
 
 
 
@@ -8,7 +9,7 @@ class Position extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fields: props,
+      fields: Object.assign({}, props),
       errors: {
         title: '',
         experience: '',
@@ -23,7 +24,17 @@ class Position extends React.Component {
     this.resetForm = this.resetForm.bind(this);
     this.onCancel = this.onCancel.bind(this);
   }
-
+  savePosition(position) {
+    const savePosition = async (position) => {
+      const _position = await positionApi.savePosition(position);
+      this.onCancel();
+      this.refreshPage();
+    };
+    savePosition(position);
+  }
+  refreshPage() {
+    window.location.reload(false);
+  }
   handleChange(e) {
     let fields = this.state.fields;
     fields[e.target.name] = e.target.value;
@@ -53,17 +64,8 @@ class Position extends React.Component {
     }
     e.preventDefault();
     if (this.validateForm()) {
-      let fields = {};
-      fields["title"] = "";
-      fields["experience"] = 0;
-      fields["no_of_openings"] = 0;
-      fields["skills"] = "";
-      fields["pos_location"] = "";
-      this.setState({ fields: fields });
-      alert("Form submitted");
-      this.resetForm();
+      this.savePosition(this.state.fields);
     }
-
   }
 
   validateForm(e) {
@@ -72,21 +74,25 @@ class Position extends React.Component {
     let errors = {};
     let formIsValid = true;
 
-    if (!fields["name"]) {
+    if (!fields["title"]) {
       formIsValid = false;
-      errors["name"] = "Please enter position.";
+      errors["title"] = "Please enter title.";
     }
     if (!fields["experience"]) {
       formIsValid = false;
       errors["experience"] = "Please enter experience.";
     }
-    if (!fields["positions"]) {
+    else if (!Number(fields["experience"])) {
       formIsValid = false;
-      errors["positions"] = "Please enter positions.";
+      errors["experience"] = "Please enter integer value.";
     }
-    else if (!Number(fields["positions"])) {
+    if (!fields["no_of_openings"]) {
       formIsValid = false;
-      errors["positions"] = "Please enter integer value.";
+      errors["no_of_openings"] = "Please enter positions.";
+    }
+    else if (!Number(fields["no_of_openings"])) {
+      formIsValid = false;
+      errors["no_of_openings"] = "Please enter integer value.";
     }
     if (!fields["pos_location"]) {
       formIsValid = false;
