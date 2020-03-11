@@ -22,14 +22,12 @@ function CandidateApp() {
             setisLoading(false);
         }
         fetchDetails();
-    }, [reloadCandidates])
+    },[reloadCandidates])
 
     const deletePosition = async (del) => {
       setisLoading(true);
       await CandidateApi.deleteCandidate(del.id);
-      const _details = await CandidateApi.getCandidates();
-      setListOfCandidates(_details);
-      setisLoading(false);
+      setReloadCandidates(true);
     }
   const showModal = () => {
     setShowAddCandidate(true);
