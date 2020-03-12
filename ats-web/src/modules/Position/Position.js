@@ -39,15 +39,25 @@ class Position extends React.Component {
       { Val: 'E', Label: 'E' }
     ];
   }
-  savePosition(position) {
+  async componentDidMount() {
+    const projects = await positionApi.getProjects();
+    this.state.fields.projects = projects;
+    this.setState({ fields: this.state.fields });
+  }
+savePosition(position) {
     async function savePosition(position) {
       const _position = await positionApi.savePosition(position);
       //this.state.props.onCloseModal();
     }
     savePosition(position);
-    this.state.props.onCloseModal();
+    this.onCancel();
+        this.refreshPage();
   }
-  handleChange= (e) => {
+  refreshPage() {
+    window.location.reload(false);
+  }
+
+  handleChange(e) {
     let fields = this.state.fields;
     fields[e.target.name] = e.target.value;
     this.setState({
@@ -149,7 +159,8 @@ class Position extends React.Component {
 
 
   }
-  render() {
+
+render() {
     return (
       <>
         <Modal
@@ -260,4 +271,3 @@ class Position extends React.Component {
 }
 
 export default Position;
-

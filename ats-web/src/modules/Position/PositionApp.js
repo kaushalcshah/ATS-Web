@@ -5,6 +5,7 @@ import { Button } from 'antd';
 import DataTable from '../../components/shared/dataTable';
 import * as positionApi from '../../api/positionApi';
 import PositionModel from './PositionModel';
+import {Popconfirm} from 'antd';
 
 const deletePosition = (del) => {
   //TO DO: Call API to delete position
@@ -66,11 +67,20 @@ function PositionApp() {
         <span>
           <a onClick={() => getPosition(record.id)}>Edit</a>
           <Divider type="vertical" />
-          <a>Delete</a>
+          <Popconfirm title="Are you sure？" okText="Yes" cancelText="No" onConfirm={() => {deletePosition(record);}}>
+            <a>Delete</a>
+          </Popconfirm>
         </span>
       ),
     },
   ];
+  function deletePosition(record){
+    const deletePosition = async (record) => {
+      const _position = await positionApi.deletePosition(record.id);
+      window.location.reload(false);
+    };
+    deletePosition(record);
+  };
   useEffect(() => {
     async function fetchPositions() {
       const _positions = await positionApi.getPositions();
@@ -111,7 +121,9 @@ function PositionApp() {
 
     <div>
       <Button type="primary" onClick={() => {
-        setPosition(new PositionModel());
+        let position = new PositionModel();
+        delete position.id;
+        setPosition(position);
         setShowPosition(true);
         setIsDisabled(false);
       }}>

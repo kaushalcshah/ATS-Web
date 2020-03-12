@@ -1,5 +1,12 @@
-export default class PositionModel {
+class ProjectModel {
     constructor() {
+        this.id = 0;
+        this.name = '';
+    }
+}
+
+export default class PositionModel {
+   constructor() {
         this.id = 0;
         this.title = '';
         this.experience = '';
