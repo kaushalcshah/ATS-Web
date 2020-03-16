@@ -137,16 +137,16 @@ function AddCandidate(props) {
         width="1000px"
       >
         <div className="ant-row">
-          <div className="ant-col-12">
+        <div className="ant-col-12">
             <TextInput
-              id="email"
-              label="Email Address:"
+              id="name"
+              label="Name:"
               labelclassName=""
-              name="email"
-              value={candidateDetails.email ? candidateDetails.email : ""}
+              name="name"
+              value={candidateDetails.name ? candidateDetails.name : ""}
               onChange={(e) => handleOnChange(e)}
               isRequired={true}
-              errorMsg={candidateDetailErrors.email ? candidateDetailErrors.email : ""}
+              errorMsg={candidateDetailErrors.name ? candidateDetailErrors.name : ""}
             />
           </div>
           <div className="ant-col-12">
@@ -190,16 +190,16 @@ function AddCandidate(props) {
           </div>
         </div>
         <div className="ant-row">
-          <div className="ant-col-12">
+        <div className="ant-col-12">
             <TextInput
-              id="name"
-              label="Name:"
+              id="email"
+              label="Email Address:"
               labelclassName=""
-              name="name"
-              value={candidateDetails.name ? candidateDetails.name : ""}
+              name="email"
+              value={candidateDetails.email ? candidateDetails.email : ""}
               onChange={(e) => handleOnChange(e)}
               isRequired={true}
-              errorMsg={candidateDetailErrors.name ? candidateDetailErrors.name : ""}
+              errorMsg={candidateDetailErrors.email ? candidateDetailErrors.email : ""}
             />
           </div>
           <div className="ant-col-12">
